@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "synax-biomed-autocal"
+version = "1.0.0"
+description = "SYNAX Biomedical Autonomic Zero-Drift Calibrator (Contractive Lyapunov-Kalman Servo & C99/Q16.16 MCU Firmware Generator)"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [
+  {name = "Dr. Ömer Faruk Aydın"}
+]
+
+[project.scripts]
+synax-biomed-autocal = "synax.biomedical_autocal:run_autocal_cli"

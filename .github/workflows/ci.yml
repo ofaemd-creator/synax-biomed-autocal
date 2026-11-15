@@ -1,0 +1,27 @@
+name: SYNAX Biomedical Autocal CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Verify (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run Biomedical Zero-Drift Calibrator Unit & Firmware Tests
+        run: python tests/test_biomedical_autocal.py -v
+      - name: Verify CLI Simulation & C99/Q16.16 Firmware Export
+        run: |
+          python src/synax/biomedical_autocal.py --profile ecg
+          python src/synax/biomedical_autocal.py --profile ibp
+          python src/synax/biomedical_autocal.py --profile ventilator --export-firmware synax_autocal_firmware.h
