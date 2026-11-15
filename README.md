@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/hero.jpg" alt="SYNAX Biomedical Autocal — Autonomous Zero-Drift Calibrator" width="100%">
+</p>
+
 # 🩺 SYNAX Biomedical Autonomic Zero-Drift Calibrator (`synax-biomed-autocal`)
 
 [![Cross-Platform CI](https://github.com/ofaemd-creator/synax-biomed-autocal/actions/workflows/ci.yml/badge.svg)](https://github.com/ofaemd-creator/synax-biomed-autocal/actions)
